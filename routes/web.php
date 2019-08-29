@@ -13,7 +13,6 @@
 
 Route::get('/', function () {
     return redirect()->route('alumnos.index');
-    return redirect()->route('maestros.index');
 });
 
 

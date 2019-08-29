@@ -105,7 +105,11 @@ class AlumnoController extends Controller
     }
     public function elim($id)
     {
-        //
-    
+        //    
+    }
+
+    public function devuelve(){
+        return Alumno::get();
     }
 }
+
