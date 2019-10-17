@@ -11,6 +11,10 @@ var alum = new Vue({
         let res = await axios.get("api/respuesta")
         this.alumnos = res.data
         console.log(this.alumnos)
-      }
+      },async getAlumnos(){
+        let res = await axios.get("api/respuesta")
+        this.alumnos = res.data
+        console.log(this.alumnos)
+      },
     }
   })
