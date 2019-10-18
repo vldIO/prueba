@@ -44,7 +44,7 @@
                 
               </tbody>
             </table>
-            {!!$alumnos->render()!!}
+            
           @else
               <div class="alert alert-info">
               <p><span class="oi oi-warning"></span> no hay alumnos registrados</p>

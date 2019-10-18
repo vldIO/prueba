@@ -12,18 +12,18 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('alumnos.index');
+    return view('welcome');
 });
 
 
-Route::resource('alumnos', 'AlumnoController');
-Route::get('/add/alumnos', 'AlumnoController@add')->name('alumno.form');
-Route::get('alumno/{id}/editar', 'AlumnoController@edit')->name('modalumno.form');
-//Route::put('alumno/{id}', 'AlumnoController@update');
-Route::get('alumno/{id?}/delete', 'AlumnoController@destroy');
+ Route::resource('alumnos', 'AlumnoController');
+ Route::get('/add/alumnos', 'AlumnoController@add')->name('alumno.form');
+ Route::get('alumno/{id}/editar', 'AlumnoController@edit')->name('modalumno.form');
+ //Route::put('alumno/{id}', 'AlumnoController@update');
+ Route::get('alumno/{id?}/delete', 'AlumnoController@destroy');
 
-Route::resource('maestros', 'MaestroController');
-Route::get('/add/maestros', 'MaestroController@add')->name('maestro.form');
-Route::get('maestro/{id}/editar', 'MaestroController@edit')->name('updmaestro.form');
-Route::get('maestro/{id?}/editar', 'MaestroController@update');
-Route::get('maestro/{id?}/delete', 'MaestroController@destroy');
+ Route::resource('maestros', 'MaestroController');
+ Route::get('/add/maestros', 'MaestroController@add')->name('maestro.form');
+ Route::get('maestro/{id}/editar', 'MaestroController@edit')->name('updmaestro.form');
+ Route::get('maestro/{id?}/editar', 'MaestroController@update');
+ Route::get('maestro/{id?}/delete', 'MaestroController@destroy');
