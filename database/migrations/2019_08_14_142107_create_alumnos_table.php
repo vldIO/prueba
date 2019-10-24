@@ -19,6 +19,7 @@ class CreateAlumnosTable extends Migration
             $table->string('curso');
             $table->integer('edad');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

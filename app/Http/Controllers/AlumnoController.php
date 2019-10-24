@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Alumno;
 use Redirect;
+use DB;
 
 class AlumnoController extends Controller
 {
@@ -17,7 +18,6 @@ class AlumnoController extends Controller
     {
         //$alumnos = Alumno::paginate(5);
         return $alumnos = Alumno::all();
-        //return view('alumno', compact('alumnos'));
     }
 
     /**
@@ -28,8 +28,9 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        Alumno::create($request->all());
-        return redirect('alumnos')->with('status', 'El alumno ha sido añadido');
+        return Alumno::create($request->all());
+        
+        //return redirect('alumnos')->with('status', 'El alumno ha sido añadido');
     }
 
     /**
@@ -52,33 +53,15 @@ class AlumnoController extends Controller
      */
     public function update($id, Request $request)
     {
-        /*$alumno = Alumno::whereId($id)->firstOrFail();
-        $alumno->nombre = $request->get('nombre');
-        $alumno->curso = $request->get('curso');
-        $alumno->edad = $request->get('edad');
+        $alumno = Alumno::find($id)
+                ->where('id', $id)
+                ->update([
+                    'nombre' => $request->nombre,
+                    'curso' => $request->curso,
+                    'edad' => $request->edad,
+                ]);
         
-        if($request->get('status') != null){
-            $mensaje->status = 0;
-        }else{
-            $mensaje->status = 1;
-        }
-        $mensaje->save();
-        
-        return redirect()->route('alumnos.index');
-        */
-
-
-        $alumno = Alumno::find($id);
-        $alumno->fill($request->all());
-        
-        if($request->get('status') != null){
-            $mensaje->status = 0;
-        }else{
-            $mensaje->status = 1;
-        }
-        $mensaje->save();
-        
-        return redirect()->route('alumnos.index');
+        return $alumno;
     }
 
     /**
@@ -89,9 +72,13 @@ class AlumnoController extends Controller
      */
     public function destroy($id)
     {
+        /*
+        $alumno = Alumno::destroy($id);
+        $alumno = Alumno::find($id);
+        */
         $alumno = Alumno::whereId($id)->firstOrFail();
         $alumno->delete();
-        return redirect('alumnos')->with('stat', 'El alumno ' . $id . ' Ha sido eliminado');
+        return $alumno;
         
     }
     public function add(){
