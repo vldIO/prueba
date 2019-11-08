@@ -5,16 +5,19 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Maestro extends Model
+class Registro extends Model
 {
     use SoftDeletes; 
-    
     protected $dates = ['deleted_at'];
-    protected $fillable = ['nombres', 'apellidos', 'edad'];
-
+    protected $fillable = ['nota', 'fecha'];
     
+    public function alumnos()
+    {
+        return $this->belongsTo('App\Alumno');
+    }
     public function materia()
     {
-        return $this->hasMany('App\Materias');
+        return $this->belongsTo('App\Materias');
     }
+    
 }

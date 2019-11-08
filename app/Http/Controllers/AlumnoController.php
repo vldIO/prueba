@@ -17,7 +17,8 @@ class AlumnoController extends Controller
     public function index()
     {
         //$alumnos = Alumno::paginate(5);
-        return $alumnos = Alumno::all();
+        //return $alumnos = Alumno::all();
+        return $alumnos = Alumno::with('registros.materia.docente')->get();
     }
 
     /**
@@ -56,8 +57,8 @@ class AlumnoController extends Controller
         $alumno = Alumno::find($id)
                 ->where('id', $id)
                 ->update([
-                    'nombre' => $request->nombre,
-                    'curso' => $request->curso,
+                    'nombres' => $request->nombres,
+                    'apellidos' => $request->apellidos,
                     'edad' => $request->edad,
                 ]);
         

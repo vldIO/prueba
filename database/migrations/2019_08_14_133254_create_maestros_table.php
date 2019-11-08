@@ -15,10 +15,11 @@ class CreateMaestrosTable extends Migration
     {
         Schema::create('maestros', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre')->nullable();
-            $table->string('materia');
+            $table->string('nombres')->nullable();
+            $table->string('apellidos')->nullable();
             $table->integer('edad');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

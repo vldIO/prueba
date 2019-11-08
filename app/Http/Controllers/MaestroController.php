@@ -15,7 +15,8 @@ class MaestroController extends Controller
     public function index()
     {
         $maestros = Maestro::all();
-        return view('maestro', compact('maestros'));
+        // return view('maestro', compact('maestros'));
+        return $maestros = Maestro::with('materia.registros.alumnos')->get();
         
     }
 
