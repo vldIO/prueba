@@ -347,6 +347,18 @@
         <main class="page-content pt-2">
             <div id="overlay" class="overlay"></div>
             <div class="container-fluid p-5">
+                <!-- <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        {!!Auth::user()->name!!}<i class="fa fa-user fa-fw"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ajustes</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
                 
                 <div class="row">
                     <div class="form-group col-md-12">
@@ -391,7 +403,7 @@
                     <div class="form-group col-md-12" id="app">
 
                         <example-two>
-</example-two>
+                        </example-two>
 
                         <example-component>
                         </example-component>

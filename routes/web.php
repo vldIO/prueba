@@ -11,10 +11,15 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-
+Route::resource('usuario', 'UsuarioController');
+Route::resource('log', 'LogController');
+Route::get('logout', 'LogController@logout');
 
  Route::resource('alumnos', 'AlumnoController');
  Route::get('/add/alumnos', 'AlumnoController@add')->name('alumno.form');

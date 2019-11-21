@@ -2006,7 +2006,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 
@@ -67852,12 +67851,9 @@ var render = function() {
               _c(
                 "table",
                 {
-                  staticClass: "table table-striped table-bordered table-sm",
-                  attrs: {
-                    id: "dtDynamicVerticalScrollExample",
-                    cellspacing: "0",
-                    width: "100%"
-                  }
+                  staticClass: "table table-sm table-hover",
+                  staticStyle: { "text-align": "center" },
+                  attrs: { id: "alum" }
                 },
                 [
                   _vm._m(0),
