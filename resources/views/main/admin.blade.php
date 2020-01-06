@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description"
         content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>Laravel</title>
+        <title>Principal</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -356,93 +356,27 @@
                 </div>
             </div>
         </nav>
-        <!-- page-content  -->
-        <main class="page-content pt-2">
-            <div id="overlay" class="overlay"></div>
-            <div class="container-fluid p-5">
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
-                            <span>Toggle Sidebar</span>
-                        </a>
-                        <a id="pin-sidebar" class="btn btn-outline-secondary rounded-0" href="#">
-                            <span>Pin Sidebar</span>
-                        </a>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Cerrar Sesion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <h3>Themes</h3>
-                        <p>Here are more themes that you can use</p>
+                    <div class="modal-body">
+                        Está a punto de terminar su sesion. ¿Está seguro de que quiere continuar?
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-12" id="app">
-
-                        <example-two>
-                        </example-two>
-
-                        <example-component>
-                        </example-component>
-                    </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Cerrar Sesion</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Está a punto de terminar su sesion. ¿Está seguro de que quiere continuar?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                    <a class="btn btn-primary" href="/logout">Si</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-
-                <hr>
-                <div class="row ">
-                    <div class="form-group col-md-12">
-                        <small>Made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <span
-                                class="text-secondary font-weight-bold">Mohamed
-                                Azouaoui</span></small>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <a href="https://github.com/azouaoui-med" target="_blank"
-                            class="btn btn-sm bg-secondary shadow-sm rounded-0 text-light mr-3 mb-3">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://twitter.com/azouaoui_med" target="_blank"
-                            class="btn btn-sm bg-secondary shadow-sm rounded-0 text-light mr-3 mb-3">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.instagram.com/azouaoui_med/" target="_blank"
-                            class="btn btn-sm bg-secondary shadow-sm rounded-0 text-light mr-3 mb-3">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/mohamed-azouaoui/" target="_blank"
-                            class="btn btn-sm bg-secondary shadow-sm rounded-0 text-light mr-3 mb-3">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                        </a>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <a class="btn btn-primary" href="/logout">Si</a>
                     </div>
                 </div>
             </div>
-        </main>
-        <!-- page-content" -->
+        </div>
     </div>
+    @yield('content')
         
         <script src="{{ asset('js/app.js') }}"></script>
 
